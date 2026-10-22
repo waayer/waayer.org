@@ -33,6 +33,12 @@ TRACEARR_HEADERS = {
     "Authorization": f"Bearer {TRACEARR_KEY}"
 }
 
+#SONARR_URL = os.getenv("SONARR_URL")
+#SONARR_KEY = os.getenv("SONARR_KEY")
+#SONARR_HEADERS = {
+#    "Authorization": f"Bearer {SONARR_KEY}"
+#}
+
 #jellyfin function that grabs the url from variable and uses headers to insert the api key into the http/api request and then filters the data only keeping MovieCount EpisodeCount and SongCount
 def jellyfin():
     response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS, timeout=5)
@@ -78,6 +84,15 @@ def tracearr():
         "TotalUsers": data["totalUsers"]
     }
 
+#if you want to use this you need sonarr v5 which is currently in beta
+#def sonarr():
+#    response = requests.get(f"{SONARR_URL}/api/v5/statistics", headers=SONARR_HEADERS, timeout=5)
+#    data = response.json()
+#
+#    return {
+#        "SeriesCount": data["seriesCount"],
+#    }
+
 #function that grabs the data from the service functions and sets it in stats{}
 def results():
     stats = {}
@@ -85,6 +100,7 @@ def results():
     stats.update(seerr())
     stats.update(immich())
     stats.update(tracearr())
+    #stats.update(sonarr())
     #sends the data in stats{} to a .json file at ./website/stats.json
     #the reason it sends the data to ./website/stats.json is so caddy can serv the file as the root folder for caddy is ./website because it it was this folder the .env would be exposed
     with open("./website/stats.json", "w") as f:
