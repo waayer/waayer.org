@@ -2,7 +2,7 @@ fetch("./stats.json")
     .then(response => response.json())
     .then(data => {
       document.getElementById("movie-count").textContent = data.MovieCount;
-      document.getElementById("series-count").textContent = data.EpisodeCount;
+      document.getElementById("episode-count").textContent = data.EpisodeCount;
       document.getElementById("song-count").textContent = data.SongCount;
       document.getElementById("requests-total").textContent = data.RequestsTotal;
       document.getElementById("requests-pending").textContent = data.RequestsPending;
@@ -14,6 +14,7 @@ fetch("./stats.json")
       document.getElementById("tracearr-streams").textContent = data.ActiveStreams;
       document.getElementById("tracearr-sessions").textContent = data.TotalSessions;
       document.getElementById("tracearr-users").textContent = data.TotalUsers;
+      //document.getElementById("series-count").textContent = data.SeriesCount;
     });
   //i dont know the exact stackoverflow page i got this from but all this does is grab the stats from stats.json
   //and stores it as i call it "html variables" so that the html can display the stats
