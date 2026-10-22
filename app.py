@@ -90,7 +90,7 @@ def tracearr():
 #    data = response.json()
 #
 #    return {
-#        "Showcount": data["seriesCount"],
+#        "SeriesCount": data["seriesCount"],
 #    }
 
 #function that grabs the data from the service functions and sets it in stats{}
