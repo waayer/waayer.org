@@ -1,11 +1,6 @@
 fetch("./stats.json")
     .then(response => response.json())
-    .then(/**
-     * Fill the page's statistics elements from the parsed stats.json data.
-     *
-     * @param {Object} data - Combined Jellyfin, Seerr, Immich, and Tracearr statistics.
-     * @throws {TypeError} If data is null or undefined, or a target element is missing.
-     */ data => {
+    .then(data => {
       document.getElementById("movie-count").textContent = data.MovieCount;
       document.getElementById("episode-count").textContent = data.EpisodeCount;
       document.getElementById("song-count").textContent = data.SongCount;
