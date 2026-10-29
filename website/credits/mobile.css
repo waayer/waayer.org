@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+header {
+  background-color: #3d1e1e;
+  padding: 15px 30px;
+  color: white;
+  display: flex;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  font-size: 22px;
+}
+
+.header-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #666;
+  color: white;
+}
+
+#currentTime {
+  display: none;
+}
+
+header img {
+  height: 0px;
+  width: 0;
+  visibility: hidden;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.header-front-text h1 {
+  margin: 0;
+}
+
+.header-front-text p {
+  margin: 5px 0 0;
+  font-size: 16px;
+}
+
+nav {
+  width: 100%;
+  background: #241818;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav img {
+  width: 0%;
+}
+
+nav a {
+  color: #f1f1f1;
+}
+
+article {
+  padding: 20px;
+  width: 100%;
+  background-color: #241818;
+  color: white;
+}
+
+.article-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #262626;
+  color: white;
+}
+
+.article-box {
+  padding: 5px;
+}
+
+.article-box h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-box a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.badge {
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #3d1e1e;
+  padding: 8px 10px;
+  color: white;
+  width: 100%;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+}
+
+.footer-content {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-version {
+  white-space: nowrap;
+  padding-left: 10px;
+}
+
+footer p {
+  margin: 3px 0;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+/* Style the topnav */
+ul.topnav {
+  display: none;
+}
+
+/* Style links in topnav */
+ul.topnav li a {
+  display: block;
+  color: #f1f1f1;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #dddddd;
+  color: black;
+  border-radius: 25px;
+}
+
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  display: flex;
+  flex-direction: column;
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.kilroy {
+  margin-top: auto;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.kilroy img {
+  width: 300px;
+  height: auto;
+  visibility: visible;
+}
