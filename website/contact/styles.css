@@ -102,6 +102,10 @@ footer {
   padding-left: 10px;
 }
 
+.footer-credits {
+  text-align: right;
+}
+
 footer p {
   margin: 3px 0;
 }
