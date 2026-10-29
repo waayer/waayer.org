@@ -49,7 +49,7 @@ def jellyfin():
             "EpisodeCount": data["EpisodeCount"],
             "SongCount": data["SongCount"]
         }
-    except:
+    except Exception:
         return {
             "MovieCount": "Error",
             "EpisodeCount": "Error",
@@ -66,7 +66,7 @@ def seerr():
             "RequestsPending": data["pending"],
             "RequestsApproved": data["approved"],
         }
-    except:
+    except Exception:
         return {
             "RequestsTotal": "Error",
             "RequestsPending": "Error",
@@ -87,7 +87,7 @@ def immich():
             "Disk": data2["diskUse"],
             "DiskAv": data2["diskAvailable"]
         }
-    except:
+    except Exception:
         return {
             "Photos": ["Error"],
             "Videos": ["Error"],
@@ -104,7 +104,7 @@ def tracearr():
             "TotalSessions": data["totalSessions"],
             "TotalUsers": data["totalUsers"]
         }
-    except:
+    except Exception:
         return {
             "ActiveStreams": ["Error"],
             "TotalSessions": ["Error"],
