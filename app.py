@@ -41,48 +41,75 @@ TRACEARR_HEADERS = {
 
 #jellyfin function that grabs the url from variable and uses headers to insert the api key into the http/api request and then filters the data only keeping MovieCount EpisodeCount and SongCount
 def jellyfin():
-    response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS, timeout=5)
-    data = response.json()
-    return {
-        "MovieCount": data["MovieCount"],
-        "EpisodeCount": data["EpisodeCount"],
-        "SongCount": data["SongCount"]
-    }
+    try:
+        response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS, timeout=5)
+        data = response.json()
+        return {
+            "MovieCount": data["MovieCount"],
+            "EpisodeCount": data["EpisodeCount"],
+            "SongCount": data["SongCount"]
+        }
+    except:
+        return {
+            "MovieCount": "Error",
+            "EpisodeCount": "Error",
+            "SongCount": "Error"
+        }
 
 #seerr function that when run querys the api and filters out results only keeping total, pending and approved
 def seerr():
-    response = requests.get(f"{SEERR_URL}/api/v1/request/count", headers=SEERR_HEADERS, timeout=5)
-    data = response.json()
-    return {
-        "RequestsTotal": data["total"],
-        "RequestsPending": data["pending"],
-        "RequestsApproved": data["approved"],
-    }
+    try:
+        response = requests.get(f"{SEERR_URL}/api/v1/request/count", headers=SEERR_HEADERS, timeout=5)
+        data = response.json()
+        return {
+            "RequestsTotal": data["total"],
+            "RequestsPending": data["pending"],
+            "RequestsApproved": data["approved"],
+        }
+    except:
+        return {
+            "RequestsTotal": "Error",
+            "RequestsPending": "Error",
+            "RequestsApproved": "Error",
+        }
 
 #immich function that grabs photo/video counts from /statistics and disk usage from /storage, then merges both into one dict
 def immich():
-    response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS, timeout=5) #this calls the immich api to get the server stats (photos and videos)
-    data = response.json()
+    try:
+        response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS, timeout=5) #this calls the immich api to get the server stats (photos and videos)
+        data = response.json()
 
-    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS, timeout=5)  # This calls the Immich API to get system storage info.
-    data2 = response2.json()
-
-    return {
-        "Photos": data["photos"],
-        "Videos": data["videos"],
-        "Disk": data2["diskUse"],
-        "DiskAv": data2["diskAvailable"]
-    }
+        response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS, timeout=5)  # This calls the Immich API to get system storage info.
+        data2 = response2.json()
+        return {
+            "Photos": data["photos"],
+            "Videos": data["videos"],
+            "Disk": data2["diskUse"],
+            "DiskAv": data2["diskAvailable"]
+        }
+    except:
+        return {
+            "Photos": ["Error"],
+            "Videos": ["Error"],
+            "Disk": ["Error"],
+            "DiskAv": ["Error"]
+        }
 
 def tracearr():
-    response = requests.get(f"{TRACEARR_URL}/api/v1/public/stats", headers=TRACEARR_HEADERS, timeout=5)
-    data = response.json()
-
-    return {
-        "ActiveStreams": data["activeStreams"],
-        "TotalSessions": data["totalSessions"],
-        "TotalUsers": data["totalUsers"]
-    }
+    try:
+        response = requests.get(f"{TRACEARR_URL}/api/v1/public/stats", headers=TRACEARR_HEADERS, timeout=5)
+        data = response.json()
+        return {
+            "ActiveStreams": data["activeStreams"],
+            "TotalSessions": data["totalSessions"],
+            "TotalUsers": data["totalUsers"]
+        }
+    except:
+        return {
+            "ActiveStreams": ["Error"],
+            "TotalSessions": ["Error"],
+            "TotalUsers": ["Error"]
+        }
 
 #if you want to use this you need sonarr v5 which is currently in beta
 #def sonarr():
