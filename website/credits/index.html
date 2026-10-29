@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>waayer.org</title>
+    
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <link href="mobile.css" rel="stylesheet" media="all" />
+    <link href="styles.css" rel="stylesheet" media="screen and (width >= 900px)" />
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <a href="../">
+            <div class="header-box">
+                <img src="../images/logo.svg" alt="logo"></img>
+                <div class="header-front-text">
+                    <h1>waayer.org</h1>
+                    <p>A simple homelab with useful services</p>
+                </div>
+            </div>
+        </a>
+        <ul class="topnav">
+            <li><a href="../">Home</a></li>
+            <li><a href="../privacy/">Privacy/TOS</a></li>
+            <li><a href="../contact/">Contact</a></li>
+            <li><a href="../about/">About</a></li>
+        </ul>
+        <div id="mySidebar" class="sidebar" inert>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
+            <a href="../">Home</a>
+            <a href="../privacy/">Privacy/TOS</a>
+            <a href="../contact/">Contact</a>
+            <a href="../about/">About</a>
+            <div class="kilroy">
+                <a href="https://en.wikipedia.org/wiki/Kilroy_was_here">
+                    <img src="../images/kilroy.svg" alt="Kilroy"/>
+                </a>
+            </div>
+        </div>
+        <div id="button">
+            <button class="openbtn" onclick="openNav(this)" aria-controls="mySidebar" aria-expanded="false" aria-label="Open menu">&#9776;</button>
+        </div>
+    </div>
+    <div id="currentTime"></div>
+</header>
+<main>
+    <nav>
+        <h1>Credits</h1>
+        <h3>This page is to give credits to the stuff we use/used like sites and image sources</h3>
+        <p><a href="https://dashboardicons.com">Dashboard Icons</a>: source for all of the app images</p>
+        <p><a href="https://cloudflare.com">Cloudflare</a>: provides free DDOS protection and global CDN</p>
+        <p><a href="https://w3schools.com">W3Schools</a>: where i learned to do html and css and python</p>
+        <p><a href="https://stackoverflow.com">Stack Overflow</a>: source for all of the javascript and some python and html/css (thank you 20 year old posts)</p>
+        <h1>Security Acknowledgements</h1>
+        <h3>no one yet if you find something <a href="mailto:waayer@waayer.org">let me know</a> please</h3>
+    </nav>
+</main>
+<footer>
+    <a href="https://github.com/waayer/waayer.org">
+        <img src="../images/source-code.svg" alt="Github logo"/>
+    </a>
+    <div class="footer-content">
+        <p>
+            <small
+                >By using any waayer.org service/website you agree to our
+                <a href="../privacy/">Privacy Policy & Terms of Service</a>.
+            </small>
+        </p>
+    </div>
+    <div class="footer-version">
+        <p>v<span id="version">...</span></p>
+    </div>
+</footer>
+    <script src="../javascript/version.js"></script><!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->
+    <script src="../javascript/time.js"></script> 
+    <script src="../javascript/mobilenav.js"></script>
+</body>
+</html>

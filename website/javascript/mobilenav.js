@@ -1,11 +1,22 @@
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidebar").style.width = "100%";
-  document.getElementById("main").style.marginLeft = "250px";
+let sidebarOpener;
+
+document.getElementById("mySidebar").inert = true;
+
+function openNav(opener = document.querySelector(".openbtn")) {
+  const sidebar = document.getElementById("mySidebar");
+  sidebarOpener = opener;
+  sidebar.inert = false;
+  sidebar.style.width = "100%";
+  sidebarOpener.setAttribute("aria-expanded", "true");
+  sidebar.querySelector(".closebtn").focus();
 }
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+  const sidebar = document.getElementById("mySidebar");
+  sidebar.style.width = "0";
+  if (sidebarOpener) {
+    sidebarOpener.setAttribute("aria-expanded", "false");
+    sidebarOpener.focus();
+  }
+  sidebar.inert = true;
 }
