@@ -116,7 +116,6 @@ main {
   flex: 1;
 }
 
-/* Style the topnav */
 ul.topnav {
   border-radius: 25px;
   margin: 0 0 0 auto;
@@ -126,7 +125,6 @@ ul.topnav {
   background-color: #333333;
 }
 
-/* Style links in topnav */
 ul.topnav li a {
   display: block;
   color: #f1f1f1;
@@ -147,13 +145,11 @@ ul.topnav li a {
   }
 }
 
-/* The sidebar menu */
 .sidebar {
-  height: 0%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  height: 0%;
+  width: 0;
 }
 
-/* The sidebar links */
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -163,12 +159,10 @@ ul.topnav li a {
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
   color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
   top: 0;
@@ -177,7 +171,6 @@ ul.topnav li a {
   margin-left: 50px;
 }
 
-/* The button used to open the sidebar */
 .openbtn {
   visibility: hidden;
   width: 0px;
