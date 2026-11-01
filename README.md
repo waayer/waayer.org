@@ -15,7 +15,7 @@ everyone is allowed to use this code/repurpose it for their website
 ```bash
 git clone https://github.com/waayer/waayer.org
 cd waayer.org
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### 2. Configure your services
@@ -28,11 +28,11 @@ isn't reachable will just show "Error" on the site.
 ### 3. Generate the stats
 Run this **from the project root** (the output path is relative):
 ```bash
-python app.py
+python3 app.py
 ```
 This creates `website/stats.json`. To keep stats fresh, run it on a schedule, e.g. every 5 minutes with cron:
 ```bash
-*/5 * * * * cd /path/to/waayer.org && python app.py
+*/5 * * * * cd /path/to/waayer.org && python3 app.py
 ```
 
 ### 4. Serve the site
@@ -48,7 +48,7 @@ yourdomain.com {
 
 Quick local test:
 ```bash
-python -m http.server 8080 -d website
+python3 -m http.server 8080 -d website
 ```
 Then open http://localhost:8080.
 
