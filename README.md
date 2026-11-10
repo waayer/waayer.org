@@ -1,5 +1,8 @@
 # waayer.org
 
+> [!IMPORTANT]  
+> Repo is being archived due to the root domain no longer being used due to bots hammering and scraping it then the subdomains that they find from the root domain
+
 This is the source code for the website at [waayer.org](https://waayer.org)
 
 everyone is allowed to use this code/repurpose it for their website
